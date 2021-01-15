@@ -1,0 +1,4 @@
+MONGO_DB_HOST = "127.0.0.1"
+MONGO_DB_PORT = 27017
+MONGO_DB_USER = "admin"
+MONGO_DB_PASS = "admin"
