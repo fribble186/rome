@@ -41,10 +41,10 @@ class Connect:
 class DataSet:
     def __init__(
         self,
-        database,
-        set_name
+        connect: Connect,
+        set_name: str
     ):
-        self.data_set = database[set_name]
+        self.data_set = connect.database[set_name]
     
     def insert(self, data: Tuple[Dict, List]):
         """
@@ -100,13 +100,13 @@ class DataSet:
         return result
 
 
-db = Connect(
-    database_name="test",
-    isAuth=True,
-    database_auth_account="root",
-    database_auth_password="123456"
-)
-data_set = DataSet(db.database, "test")
+# db = Connect(
+#     database_name=settings.MONGO_DB_DATABASE,
+#     isAuth=True,
+#     database_auth_account=settings.MONGO_DB_DATABASE_USER,
+#     database_auth_password=settings.MONGO_DB_DATABASE_PW
+# )
+# data_set = DataSet(db, "test")
 # client.insert({'test': 'test'})
 # client.delete_one({'test': 'test'})
-print(data_set.find_many({'test': 'test'}))
+# print(data_set. find_many({'test': 'test'}))
